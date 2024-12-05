@@ -12,20 +12,17 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            GeometryReader { proxy in
-                Group {
-                    Text("Марафон ")
-                        .foregroundColor(.gray) +
-                    Text("по SwiftUI ") +
-                    Text("«Отцовский пинок»")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.blue)
-                }
-                .frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
+            Group {
+                Text("Марафон ")
+                    .foregroundColor(.gray) +
+                Text("по SwiftUI ") +
+                Text("«Отцовский пинок»")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
             }
-            .border(.red)
             .frame(width: widthValue, height: 200)
+            .border(.red)
             
             Slider(value: $widthValue, in: 100...300, onEditingChanged: { _ in })
                 .padding()
